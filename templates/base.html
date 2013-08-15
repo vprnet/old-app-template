@@ -8,20 +8,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{% block description %}
         VPR is your source for Vermont News and NPR News and home of VPR Classical, Vermont&#039;s 24-hour classical music network. Listen to VPR for VPR News, Vermont Edition, Commentaries, and Eye On The Night Sky.{% endblock %}">
-    <meta name="author" content="Matthew Parrilla, VPR, mparrilla *at* vpr.net">
+    <meta name="author" content="Matthew Parrilla, VPR, @mattparrilla">
 
-    {% block og-facebook %}
-    <meta property="og:description" content="" />
+    {% if social %}
+    <meta property="og:description" content="{{ social.description }}" />
     <meta property="fb:admins" content="5735853" />
-    <meta property="og:title" content="" />
+    <meta property="og:title" content="{{ social.title }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="" />
+    <meta property="og:image" content="{{ social.fb_img }}" />
     <meta property="og:url" content="" />
     <meta property="og:site_name" content="Vermont Public Radio" />
-    {% endblock %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@vprnet">
+    <meta name="twitter:title" content="{{ social.title }}">
+    <meta name="twitter:description" content="{{ social.description }}">
+    <meta name="twitter:creator" content="@mattparrilla">
+    <meta name="twitter:image:src" content="{{ social.tw_img }}">
+    {% endif %}
 
     <!-- Le styles -->
-    <link href="{% url_for('static', filename='css/style.css') %}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 
     <style type="text/css">
         body {
@@ -36,7 +42,7 @@
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="{% url_for('static', filename='ico/favicon.ico' 5}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.ico') }}">
 
     <!--Underwriter Script -->
     <script type='text/javascript'> var googletag = googletag || {}; googletag.cmd = googletag.cmd || []; (function() { var gads = document.createElement('script'); gads.async = true; gads.type = 'text/javascript'; var useSSL = 'https:' == document.location.protocol; gads.src = (useSSL ? 'https:' : 'http:') +  '//www.googletagservices.com/tag/js/gpt.js'; var node = document.getElementsByTagName('script')[0]; node.parentNode.insertBefore(gads, node); })(); </script>
@@ -92,7 +98,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="{% url_for('static', filename='js/bootstrap.js') %}"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
 
   </body>
 </html>
