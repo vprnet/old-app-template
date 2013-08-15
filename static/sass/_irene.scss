@@ -1,0 +1,20 @@
+div.span3 {
+    max-width: 220px !important;
+}
+
+div.archive {
+    div.span3 {
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+    div a h3 {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1em;
+    }
+    div a p {
+        color: #555;
+        font-weight: 500;
+        line-height: 1em;
+    }
+}
