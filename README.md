@@ -21,8 +21,9 @@ This stack is used by VPR to publish news apps and can be used for anything from
 
         $ git clone git@github.com:vprnet/project-skeleton.git
 
-3. Create Virtual Environment
+3. Create Virtual Environment in project
 
+        $ cd project-skeleton
         $ virtualenv venv
         
 4. Enter virtual environment
