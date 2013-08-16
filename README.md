@@ -1,30 +1,18 @@
 #VPR Project Skeleton
-VPR uses this project skeleton to create static files for individual web pages and news apps which are served from Amazon S3.
+Create and push static files for hosting on Amazon S3.
+
+This stack is used by VPR to publish news apps and can be used for anything from building a blog to creating web applications.
 
 ## Technology
-- [Flask](http://flask.pocoo.org/)
+- [Flask](http://flask.pocoo.org/): Used for local development
 
-Used for local development
+- [Frozen-Flask](http://pythonhosted.org/Frozen-Flask/): Freezes Flask application into a series of static files
 
-- [Frozen-Flask](http://pythonhosted.org/Frozen-Flask/)
+- [Jinja](http://jinja.pocoo.org/docs/): Python templating language
 
-Freezes Flask application into a series of static files
+- [Bootstrap](http://getbootstrap.com/): Twitter's HTML/CSS/JS framework
 
-- [Jinja](http://jinja.pocoo.org/docs/)
-
-Python templating language
-
-- [Bootstrap](http://getbootstrap.com/)
-
-Twitter's HTML/CSS/JS framework
-
-- [Sass](http://sass-lang.com/)
-
-CSS extension that allows for variables, inheritance, and even logic in stylesheets
-
-- [boto](http://docs.pythonboto.org/en/latest/)
-
-Python interface to Amazon Web Services (for deploying project to S3)
+- [Sass](http://sass-lang.com/): CSS extension that allows for variables, inheritance, and even logic in stylesheets
 
 ## Install 
 
