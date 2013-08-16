@@ -17,10 +17,14 @@ This stack is used by VPR to publish news apps and can be used for anything from
 ## Install 
 
 1. Install [virtualenv](https://pypi.python.org/pypi/virtualenv)
-3. Clone the repository
+2. Clone the repository
 
         $ git clone git@github.com:vprnet/project-skeleton.git
 
+3. Create Virtual Environment
+
+        $ virtualenv venv
+        
 4. Enter virtual environment
 
         $ source venv/bin/activate
