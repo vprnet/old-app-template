@@ -30,13 +30,7 @@ content_types = {
 }
 
 
-def sub_bucket():
-    s = os.getcwd().rsplit('/')[-1]
-    sub_bucket = 'apps/' + s
-    return sub_bucket
-
-
-def directory_list(argv, directory='.'):
+def directory_list(argv, directory='build'):
     """Creates a list of all non-excluded files in current directory
     and below"""
 
@@ -74,7 +68,7 @@ def s3_filename():
                 pass
             else:
                 if f[0] is not '.':
-                    s3_list.append(f[0][2:] + '/' + i)
+                    s3_list.append(f[0][6:] + '/' + i)
                 else:
                     s3_list.append(i)
     return s3_list
@@ -96,18 +90,19 @@ def set_metadata():
         ext = os.path.splitext(filename)[1]
 
         if ext == '.html':  # deletes '.html' from s3 key so no ext on url
-            k.key = sub_bucket() + '/' + os.path.splitext(filename)[0]
+            k.key = os.path.splitext(filename)[0]
             k.set_metadata('Expires', time.time() + 3600)
         else:
-            k.key = sub_bucket() + '/' + filename  # strip leading 0
+            k.key = '/' + filename  # strip leading 0
             k.set_metadata('Expires', expires_header)
 
         if ext == '.css' or ext == '.js' or ext == '.html':
-            f_in = open(filename, 'rb')
-            with gzip.open(filename + '.gz', 'w+') as f:
+            build_file = 'build/' + filename
+            f_in = open(build_file, 'rb')
+            with gzip.open(build_file + '.gz', 'w+') as f:
                 f.writelines(f_in)
             f_in.close()
-            f = filename + '.gz'
+            f = build_file + '.gz'
             k.set_metadata('Content-Encoding', 'gzip')
         else:
             f = filename
@@ -119,3 +114,5 @@ def set_metadata():
         k.set_metadata('ETag', etag_hash)
         k.set_contents_from_filename(f)
         k.make_public()
+
+set_metadata()
