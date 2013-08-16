@@ -41,7 +41,7 @@ The project will be viewable at http://127.0.0.1:5000/
 
 1. Create an S3 bucket to serve content using [Amazon's documentation](http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html) for hosting a static website
 
-2. Configure AWS settings in _settings.py
+2. Configure AWS settings in `_settings.py`
 
 3. Rename `_settings.py` to `settings.py`
 
@@ -57,7 +57,7 @@ The project will be viewable at http://127.0.0.1:5000/
 
 ## Sass and CSS
 
-If you haven't tried one of the CSS 'meta-languages' (Sass/Less) they are well worth learning. If, however, you want to stick to standard CSS you can by just modifying style.css the old fashioned way.
+If you haven't tried one of the CSS 'meta-languages' (Sass/Less) they are well worth learning (and easy!). If, however, you want to stick to standard CSS you can do so by working with style.css the old fashioned way (though Bootstrap's CSS will be prepended to the stylesheet).
 
 Here are some instructions for developing with Sass:
 
@@ -65,7 +65,7 @@ Here are some instructions for developing with Sass:
 
 2. Edit `_example.scss`. Valid css is valid scss, so use as much or little Sass as you like.
 
-3. Compile. I use CodeKit (mentioned below). CodeKit compiles Sass into CSS, concatenates all stylesheets, and minifies them for production. Pretty cool.
+3. Compile. I use CodeKit (mentioned below). CodeKit compiles Sass into CSS, concatenates all stylesheets, and minifies them for production. Cool.
 
 ## To-Do
 
