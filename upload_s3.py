@@ -88,6 +88,8 @@ def set_metadata():
     for filename in s3_list:
         k = Key(mybucket)
         ext = os.path.splitext(filename)[1]
+        if ext == '':
+            ext = '.html'
 
         if ext == '.html':  # deletes '.html' from s3 key so no ext on url
             k.key = os.path.splitext(filename)[0]
@@ -114,5 +116,3 @@ def set_metadata():
         k.set_metadata('ETag', etag_hash)
         k.set_contents_from_filename(f)
         k.make_public()
-
-set_metadata()
