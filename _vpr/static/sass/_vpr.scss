@@ -1,0 +1,74 @@
+$green: #509e2f;
+$percent: 6%;
+$btn-percent: 4%;
+$tablet: 768px;
+
+@media (max-width: $tablet) {
+    #body {
+        margin-left: 5px;
+    }
+}
+
+.navbar {
+    background-color: $green;
+    filter: none;
+    background-image: linear-gradient(to bottom, lighten($green, $percent), darken($green, $percent));
+    background-repeat: repeat-x;
+    border-color: #a2dc8a;
+    background-image: -moz-linear-gradient(top, lighten($green, $percent), darken($green, $percent));
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(lighten($green, $percent)), to(darken($green, $percent)));
+    background-image: -webkit-linear-gradient(top, lighten($green, $percent), darken($green, $percent));
+    background-image: -o-linear-gradient(top, lighten($green, $percent), darken($green, $percent));
+}
+
+ul.nav li a {
+    color: #f2f2f2;
+    padding-top: 30px;
+    &:hover {
+        text-decoration: underline;
+        color: #ddd;
+    }
+    @media (max-width: $tablet) {
+        padding-top: 15px;
+        &:hover {
+            background: darken($green, 15%);
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+    }
+}
+
+button.navbar-toggle {
+    margin-top: 15px;
+    background-color: darken($green, $btn-percent * 2);
+    *background-color: darken($green, $btn-percent * 2);
+    background-image: -moz-linear-gradient(top, darken($green, $btn-percent), darken($green, $btn-percent * 3));
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(darken($green, $btn-percent)), to(darken($green, $btn-percent * 3)));
+    background-image: -webkit-linear-gradient(top, darken($green, $btn-percent), darken($green, $btn-percent * 3));
+    background-image: -o-linear-gradient(top, darken($green, $btn-percent), darken($green, $btn-percent * 3));
+    background-image: linear-gradient(to bottom, darken($green, $btn-percent), darken($green, $btn-percent * 3));
+    background-repeat: repeat-x;
+    border-color: #040404 #040404 #000000;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1515', endColorstr='#ff0404', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    &:hover, .active {
+        background-color: darken($green, $percent * 2);
+        *background-color: darken($green, $percent * 2);
+        background-image: -moz-linear-gradient(top, darken($green, $percent), darken($green, $percent * 3));
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(darken($green, $percent)), to(darken($green, $percent * 3)));
+        background-image: -webkit-linear-gradient(top, darken($green, $percent), darken($green, $percent * 3));
+        background-image: -o-linear-gradient(top, darken($green, $percent), darken($green, $percent * 3));
+        background-image: linear-gradient(to bottom, darken($green, $percent), darken($green, $percent * 3));
+        background-repeat: repeat-x;
+        border-color: #040404 #040404 #000000;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1515', endColorstr='#ff0404', GradientType=0);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    }
+}
+
+.navbar-collapse {
+    border-top-color: darken($green, 10%);
+}
+
