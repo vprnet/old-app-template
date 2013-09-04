@@ -52,13 +52,9 @@ The project will be viewable at http://127.0.0.1:5000/
 
         $ mv _settings.py settings.py
 
-4. Freeze files
+4. Freeze files and push to S3
 
         $ python skeleton.py build
-
-5. Push to S3
-
-        $ python upload_s3.py
 
 ## Sass and CSS
 
