@@ -10,6 +10,9 @@ freezer = Freezer(app)
 app.config['FREEZER_DEFAULT_MIMETYPE'] = 'text/html'
 app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
 
+# If project doesn't have it's own domain/subdomain, use BASE_URL
+#app.config['FREEZER_BASE_URL'] = ''
+
 
 @app.route('/')
 def index():
