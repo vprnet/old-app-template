@@ -1,5 +1,6 @@
 # If Frozen Flask needs to generate URLs, use this file
 # see: http://pythonhosted.org/Frozen-Flask/#url-generators
+# if enabled, `python freeze.py build` becomes new build command
 
 #import sys
 #from flask_frozen import Freezer
