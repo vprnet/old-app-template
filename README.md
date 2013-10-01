@@ -34,7 +34,13 @@ This stack is used by VPR to publish news apps and can be used for anything from
 
         $ pip install -r requirements.txt
 
-## Develop
+6. Change `_settings.py` to `settings.py`
+
+        $ mv _settings.py settings.py
+These settings can be configured later (see "Deploy" below)
+
+
+##Develop
 
 To run local server:
 
@@ -46,11 +52,7 @@ The project will be viewable at http://127.0.0.1:5000/
 
 1. Create an S3 bucket to serve content using [Amazon's documentation](http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html) for hosting a static website
 
-2. Configure AWS settings in `_settings.py`
-
-3. Rename `_settings.py` to `settings.py`
-
-        $ mv _settings.py settings.py
+2. Configure AWS settings in `settings.py`
 
 4. Freeze files and push to S3
 
