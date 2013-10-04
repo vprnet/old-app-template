@@ -7,7 +7,7 @@ import time
 from sys import argv
 from boto.s3.connection import S3Connection
 from boto.s3.key import Key
-from settings import AWS_KEY, AWS_SECRET_KEY, AWS_BUCKET
+from settings import AWS_KEY, AWS_SECRET_KEY, AWS_BUCKET, AWS_DIRECTORY
 
 STATIC_EXPIRES = 60 * 24 * 3600
 HTML_EXPIRES = 3600
@@ -92,10 +92,14 @@ def set_metadata():
             ext = '.html'
 
         if ext == '.html':  # deletes '.html' from s3 key so no ext on url
-            k.key = os.path.splitext(filename)[0]
+            local_name = os.path.splitext(filename)[0]
+            if local_name[0] != '/':  # if file within child dir
+                k.key = AWS_DIRECTORY + '/' + local_name
+            else:  # if file in top level dir
+                k.key = AWS_DIRECTORY + local_name
             k.set_metadata('Expires', time.time() + 3600)
         else:
-            k.key = '/' + filename  # strip leading 0
+            k.key = AWS_DIRECTORY + '/' + filename  # strip leading 0
             k.set_metadata('Expires', expires_header)
 
         if ext == '.css' or ext == '.js' or ext == '.html':
