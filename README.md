@@ -75,9 +75,6 @@ Here are some instructions for developing with Sass:
 1. Automate generation of social network meta tags
 2. Impliment NPR-API ingest
 
-## Front-End Web Tool
-I use [CodeKit](https://incident57.com/codekit/) during front end development. It manages my static assets by concatenating and minifying all of my stylesheets and javascript automatically after any modifications. The "Frameworks" feature lets me utilize base stylesheets across multiple projects while only needing to maintain a single copy of the file.
-
 ## Author
 [Matt Parrilla](http://twitter.com/mattparrilla)
 
