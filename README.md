@@ -44,7 +44,7 @@ These settings can be configured later (see "Deploy" below)
 
 To run local server:
 
-        $ python skeleton.py
+        $ python app.py
 
 The project will be viewable at http://127.0.0.1:5000/
 
@@ -56,7 +56,7 @@ The project will be viewable at http://127.0.0.1:5000/
 
 4. Freeze files and push to S3
 
-        $ python skeleton.py build
+        $ python app.py build
 
 ## Sass and CSS
 
@@ -72,6 +72,7 @@ Here are some instructions for developing with Sass:
 
 ## To-Do
 
+0. Write description of project structure
 1. Automate generation of social network meta tags
 2. Impliment NPR-API ingest
 

@@ -12,7 +12,10 @@ app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
 app.config['FREEZER_BASE_URL'] = 'http://www.vpr.net/apps/test'
 
 # If project doesn't have it's own domain/subdomain, use BASE_URL
-#app.config['FREEZER_BASE_URL'] = 'http://www.example.com/not_base'
+# app.config['FREEZER_BASE_URL'] = 'http://www.example.com/not_base'
+
+# If Flask is needed to generate URLs, use freezer.register_generator
+# see: http://pythonhosted.org/Frozen-Flask/#url-generators
 
 
 @app.route('/')
@@ -23,6 +26,7 @@ def index():
 @app.route('/test/work')
 def work():
     return render_template('content.html')
+
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'build':
