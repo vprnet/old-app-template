@@ -68,7 +68,7 @@ Here are some instructions for developing with Sass:
 
 2. Edit `_example.scss`. Valid css is valid scss, so use as much or little Sass as you like.
 
-3. Compile. I use CodeKit (mentioned below). CodeKit compiles Sass into CSS, concatenates all stylesheets, and minifies them for production. Cool.
+3. Compile. [CodeKit](http://incident57.com/codekit/) compiles Sass into CSS, concatenates all stylesheets, and minifies them for production. Cool.
 
 ## To-Do
 
