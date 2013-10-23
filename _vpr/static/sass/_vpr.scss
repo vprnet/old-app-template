@@ -78,3 +78,12 @@ button.navbar-toggle {
     border-top-color: darken($green, 10%);
 }
 
+#underwriter-nav {
+    font-size: 12px;
+    padding-left: 0;
+    margin-top: 3px;
+    li {
+        display: inline;
+    }
+}
+
