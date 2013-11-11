@@ -19,7 +19,10 @@ app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
 
 @app.route('/')
 def index():
-    return render_template('content.html')
+    social = {'facebook_url': 'http://www.facebook.com',
+        'twitter_url': 'http://www.twitter.com',
+        'google_url': 'http://www.google.com'}
+    return render_template('content.html', social=social)
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'build':

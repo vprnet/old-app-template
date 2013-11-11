@@ -52,10 +52,20 @@
 
     <nav class="navbar navbar-fixed-top" role="navigation">
         <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="http://www.vpr.net"><img src="static/img/vpr-logo1.png" alt="VPR Logo" /></a>
-                <p id="navbar-title" class="hidden-xs">VPR Template</p>
+                <a id="link-home" class="navbar-brand" href="http://www.vpr.net">
+                    <div id="vpr-logo"></div></a>
+                <p id="navbar-title">VPR Template</p>
+                {% if social %}
+                <div id="social-logos">
+                    <a href="{{ social.google_url }}">
+                        <div id="google_icon"></div></a>
+                    <a href="{{ social.twitter_url }}">
+                        <div id="twitter_icon"></div></a>
+                    <a href="{{ social.facebook_url }}">
+                        <div id="facebook_icon"></div></a>
+                </div>
+                {% endif %}
             </div>
     </nav>
 
