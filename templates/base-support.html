@@ -54,12 +54,33 @@
         <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="http://www.vpr.net"><img src="static/img/vpr-logo1.png" alt="VPR Logo" /></a>
-                <p id="navbar-title" class="hidden-xs">VPR Template</p>
-                <img src="{{ url_for('static'
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.vpr.net"><img src="static/img/vpr-logo.png" alt="VPR Logo" /></a>
             </div>
-    </nav>
 
+            <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="http://digital.vpr.net">
+                    VPR News</a></li>
+                <li class="hidden-sm"><a href="http://digital.vpr.net/programs/vermont-edition">
+                    Vermont Edition</a></li>
+                <li class="hidden-sm"><a href="http://digital.vpr.net/programs/vpr-classical">
+                    VPR Classical</a></li>
+                <li><a href="http://digital.vpr.net/topics/featured-programs"
+                    class="nav-link">Programs</a></li>
+                <li><a href="http://digital.vpr.net/support"
+                    class="nav-link">Support</a></li>
+                <li><a href="http://digital.vpr.net/inside-vpr"
+                    class="nav-link">Inside VPR</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
     <div id="body" class="container">
     {% block content %} {% endblock %}
 

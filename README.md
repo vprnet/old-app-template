@@ -25,7 +25,7 @@ This stack is used by VPR to publish news apps and can be used for anything from
 
         $ cd project-skeleton
         $ virtualenv venv
-        
+
 4. Enter virtual environment
 
         $ source venv/bin/activate
@@ -39,6 +39,12 @@ This stack is used by VPR to publish news apps and can be used for anything from
         $ mv _settings.py settings.py
 These settings can be configured later (see "Deploy" below)
 
+7. Remove VPR specific code:
+
+        $ rm -r static
+        $ rm -r templates
+        $ mv _static/ static
+        $ mv _templates/ templates
 
 ##Develop
 
@@ -60,7 +66,7 @@ The project will be viewable at http://127.0.0.1:5000/
 
 ## Sass and CSS
 
-If you haven't tried one of the CSS 'meta-languages' (Sass/Less) they are well worth learning (and easy!). If, however, you want to stick to standard CSS you can do so by working with style.css the old fashioned way (though Bootstrap's CSS will be prepended to the stylesheet).
+If you haven't tried one of the CSS 'meta-languages' (Sass/Less) they are well worth learning (and easy!). If, however, you want to stick to standard CSS you can do so by working with style.css the old fashioned way.
 
 Here are some instructions for developing with Sass:
 
@@ -68,7 +74,7 @@ Here are some instructions for developing with Sass:
 
 2. Edit `_example.scss`. Valid css is valid scss, so use as much or little Sass as you like.
 
-3. Compile. [CodeKit](http://incident57.com/codekit/) compiles Sass into CSS, concatenates all stylesheets, and minifies them for production. Cool.
+3. Compile. I use [CodeKit](http://incident57.com/codekit/), which compiles Sass into CSS, concatenates all stylesheets, and minifies them for production. It's great, but costs $25. If you don't want to spend the money, you can use Compass to compile following [these instructions](http://thesassway.com/beginner/getting-started-with-sass-and-compass).
 
 ## To-Do
 
