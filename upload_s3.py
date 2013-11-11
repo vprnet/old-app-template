@@ -7,14 +7,9 @@ import time
 from sys import argv
 from boto.s3.connection import S3Connection
 from boto.s3.key import Key
-from settings import AWS_KEY, AWS_SECRET_KEY, AWS_BUCKET, AWS_DIRECTORY
-
-STATIC_EXPIRES = 60 * 24 * 3600
-HTML_EXPIRES = 3600
-
-IGNORE_DIRECTORIES = ['.git', 'venv', 'sass', 'templates']
-IGNORE_FILES = ['.DS_Store']
-IGNORE_FILE_TYPES = ['.gz', '.pyc', '.py', '.rb', '.md']
+from settings import (AWS_KEY, AWS_SECRET_KEY, AWS_BUCKET, AWS_DIRECTORY,
+    HTML_EXPIRES, STATIC_EXPIRES, IGNORE_DIRECTORIES, IGNORE_FILES,
+    IGNORE_FILE_TYPES)
 
 content_types = {
     '.css': 'text/css',
@@ -97,7 +92,7 @@ def set_metadata():
                 k.key = AWS_DIRECTORY + '/' + local_name
             else:  # if file in top level dir
                 k.key = AWS_DIRECTORY + local_name
-            k.set_metadata('Expires', time.time() + 3600)
+            k.set_metadata('Expires', time.time() + HTML_EXPIRES)
         else:
             k.key = AWS_DIRECTORY + '/' + filename  # strip leading 0
             k.set_metadata('Expires', expires_header)
