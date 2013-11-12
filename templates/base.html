@@ -60,7 +60,13 @@
                         <div id="google_icon" target="_blank"></div></a>
                     <a href="{{ social.twitter_url }}" target="_blank">
                         <div id="twitter_icon"></div></a>
-                    <a href="{{ social.facebook_url }}" target="_blank">
+                    <a href="https://www.facebook.com/dialog/feed?
+                        app_id=282283015178&
+                        picture={{ social.img }}&
+                        name={{ social.title }}&
+                        caption={{ social.subtitle }}&
+                        description={{ social.description }}&
+                        redirect_uri={{ page_url }}" target="_blank">
                         <div id="facebook_icon"></div></a>
                 </div>
                 {% endif %}
