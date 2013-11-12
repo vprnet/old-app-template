@@ -1,7 +1,7 @@
 import sys
 from upload_s3 import set_metadata
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_frozen import Freezer
 
 app = Flask(__name__)
@@ -19,9 +19,11 @@ app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
 
 @app.route('/')
 def index():
-    social = {'facebook_url': 'http://www.facebook.com',
+
+    social = {'facebook_url': 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fparse.com',
         'twitter_url': 'http://www.twitter.com',
         'google_url': 'http://www.google.com'}
+    print request.path
     return render_template('content.html', social=social)
 
 if __name__ == '__main__':

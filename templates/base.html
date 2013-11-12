@@ -3,11 +3,9 @@
   <head>
     <meta charset="utf-8">
 
-<!-- Customizable head elements -->
     <title>{% block title %}Vermont Public Radio{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{% block description %}
-        VPR is your source for Vermont News and NPR News and home of VPR Classical, Vermont&#039;s 24-hour classical music network. Listen to VPR for VPR News, Vermont Edition, Commentaries, and Eye On The Night Sky.{% endblock %}">
+    <meta name="description" content="{% block description %}{{ description }}{% endblock %}">
     <meta name="author" content="Matthew Parrilla, VPR, @mattparrilla">
 
     {% if social %}
@@ -20,7 +18,7 @@
     <meta property="og:site_name" content="Vermont Public Radio" />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@vprnet">
-    <meta name="twitter:title" content="{{ social.title }}">
+    <meta name="twitter:title" content="{{ title }}">
     <meta name="twitter:description" content="{{ social.description }}">
     <meta name="twitter:creator" content="@mattparrilla">
     <meta name="twitter:image:src" content="{{ social.img }}">
@@ -58,11 +56,11 @@
                 <p id="navbar-title">VPR Template</p>
                 {% if social %}
                 <div id="social-logos">
-                    <a href="{{ social.google_url }}">
-                        <div id="google_icon"></div></a>
-                    <a href="{{ social.twitter_url }}">
+                    <a href="{{ social.google_url }}" target="_blank">
+                        <div id="google_icon" target="_blank"></div></a>
+                    <a href="{{ social.twitter_url }}" target="_blank">
                         <div id="twitter_icon"></div></a>
-                    <a href="{{ social.facebook_url }}">
+                    <a href="{{ social.facebook_url }}" target="_blank">
                         <div id="facebook_icon"></div></a>
                 </div>
                 {% endif %}
@@ -81,6 +79,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+    {% block scripts %}{% endblock %}
 
   </body>
 </html>
