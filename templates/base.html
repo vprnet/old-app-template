@@ -58,7 +58,7 @@
                 <div id="social-logos">
                     <a href="{{ social.google_url }}" target="_blank">
                         <div id="google_icon" target="_blank"></div></a>
-                    <a href="{{ social.twitter_url }}" target="_blank">
+                    <a href="http://www.twitter.com/intent/tweet?url={{ social.twitter_url|urlencode }}&text={{ social.twitter_text}}&via=vprnet&hashtag={{ social.twitter_hashtag }}" target="_blank">
                         <div id="twitter_icon"></div></a>
                     <a href="https://www.facebook.com/dialog/feed?
                         app_id=282283015178&
