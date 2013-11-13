@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
 
     <title>{% block title %}Vermont Public Radio{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{% block description %}{{ description }}{% endblock %}">
+    <meta name="description" content="{% block description %}{{ social.description }}{% endblock %}">
     <meta name="author" content="Matthew Parrilla, VPR, @mattparrilla">
 
     {% if social %}
@@ -14,11 +14,11 @@
     <meta property="og:title" content="{{ social.title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="{{ social.img }}" />
-    <meta property="og:url" content="" />
+    <meta property="og:url" content="{{ page_url }}" />
     <meta property="og:site_name" content="Vermont Public Radio" />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@vprnet">
-    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:title" content="{{ social.title }}">
     <meta name="twitter:description" content="{{ social.description }}">
     <meta name="twitter:creator" content="@mattparrilla">
     <meta name="twitter:image:src" content="{{ social.img }}">
@@ -44,48 +44,42 @@
     <!-- Analytics script -->
     <script type="text/javascript">(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = '//stream.publicbroadcasting.net/analytics/aayb.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
     <!-- end analytics script -->
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <nav class="navbar navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <a id="link-home" class="navbar-brand" href="http://www.vpr.net">
-                    <div id="vpr-logo"></div></a>
-                <p id="navbar-title">VPR Template</p>
-                {% if social %}
-                <div id="social-logos">
-                    <a href="{{ social.google_url }}" target="_blank">
-                        <div id="google_icon" target="_blank"></div></a>
-                    <a href="http://www.twitter.com/intent/tweet?url={{ social.twitter_url|urlencode }}&text={{ social.twitter_text}}&via=vprnet&hashtag={{ social.twitter_hashtag }}" target="_blank">
-                        <div id="twitter_icon"></div></a>
-                    <a href="https://www.facebook.com/dialog/feed?
-                        app_id=282283015178&
-                        picture={{ social.img }}&
-                        name={{ social.title }}&
-                        caption={{ social.subtitle }}&
-                        description={{ social.description }}&
-                        redirect_uri={{ page_url }}" target="_blank">
-                        <div id="facebook_icon"></div></a>
-                </div>
-                {% endif %}
+<nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a id="link-home" class="navbar-brand" href="http://www.vpr.net">
+                <div id="vpr-logo"></div></a>
+            <p id="navbar-title">VPR Template</p>
+            {% if social %}
+            <div id="social-logos">
+                <a href="https://plus.google.com/share?url={{ page_url|urlencode }}" target="_blank">
+                    <div id="google_icon" target="_blank"></div></a>
+                <a href="http://www.twitter.com/intent/tweet?url={{ page_url|urlencode }}&text={{ social.twitter_text|urlencode }}&via=vprnet&hashtags={{ social.twitter_hashtag|urlencode }}" target="_blank">
+                    <div id="twitter_icon"></div></a>
+                <a href="https://www.facebook.com/dialog/feed?app_id=282283015178&picture={{ social.img|urlencode }}&name={{ social.title|urlencode }}&caption={{ social.subtitle|urlencode }}&description={{ social.description|urlencode }}&redirect_uri={{ page_url|urlencode }}" target="_blank">
+                    <div id="facebook_icon"></div></a>
             </div>
-    </nav>
+            {% endif %}
+        </div>
+</nav>
 
-    <div id="body" class="container">
-    {% block content %} {% endblock %}
+<div id="body" class="container">
+    {% block content %}{% endblock %}
 
-        <footer> <p>&copy; Vermont Public Radio 2013</p> </footer>
+    <footer> <p>&copy; Vermont Public Radio 2013</p> </footer>
 
-    </div> <!-- /container -->
+</div> <!-- /container -->
 
-    <!-- Le javascript
+    <!-- Scripts
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    {% block scripts %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
-    {% block scripts %}{% endblock %}
+    {% endblock %}
 
-  </body>
+</body>
 </html>

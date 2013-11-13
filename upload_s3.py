@@ -21,6 +21,7 @@ content_types = {
     '.ico': 'image/ico',
     '.csv': 'text/csv',
     '.html': 'text/html',
+    '.svg': 'image/svg+xml',
     '.json': 'text/json'
 }
 
@@ -88,6 +89,8 @@ def set_metadata():
 
         if ext == '.html':  # deletes '.html' from s3 key so no ext on url
             local_name = os.path.splitext(filename)[0]
+            if local_name == '/index':
+                local_name = '/index.html'
             if local_name[0] != '/':  # if file within child dir
                 k.key = AWS_DIRECTORY + '/' + local_name
             else:  # if file in top level dir

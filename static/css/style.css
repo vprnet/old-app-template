@@ -51,6 +51,9 @@ footer {
     padding: 5px 0 5px 10px; }
     #social-logos a div {
       background-size: 100%; }
+    @media (max-width: 768px) {
+      #social-logos a:first-child {
+        margin-right: 15px; } }
 
 #vpr-logo {
   padding: 0;

@@ -74,5 +74,10 @@ footer {
         div {
             background-size: 100%;
         }
+        @media (max-width: 768px) {
+            &:first-child {
+                margin-right: 15px;
+            }
+        }
     }
 }
