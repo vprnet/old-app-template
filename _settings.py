@@ -2,7 +2,7 @@
 AWS_KEY = 'REQUIRED'
 AWS_SECRET_KEY = 'REQUIRED'
 AWS_BUCKET = 'REQUIRED'
-AWS_DIRECTORY = ''  # Leave blank unless project not at base URL
+AWS_DIRECTORY = ''  # Leave blank *not false* unless project not at base URL
                     # i.e. example.com/apps/ instead of example.com/
 
 # Cache Settings (units in seconds)

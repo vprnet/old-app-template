@@ -44,7 +44,7 @@ body {
         position: relative;
         top: 4px;
         left: 10px;
-        @media (max-width: 768px) {
+        @media (max-width: $tablet) {
             display: none;
         }
     }
@@ -74,7 +74,7 @@ footer {
         div {
             background-size: 100%;
         }
-        @media (max-width: 768px) {
+        @media (max-width: $tablet) {
             &:first-child {
                 margin-right: 15px;
             }

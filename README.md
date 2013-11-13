@@ -1,4 +1,4 @@
-#VPR Project Skeleton
+#VPR App Template
 Create and push static files for hosting on Amazon S3.
 
 This stack is used by VPR to publish news apps and can be used for anything from building a blog to creating web applications.
