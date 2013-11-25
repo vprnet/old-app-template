@@ -52,7 +52,7 @@
         <div class="navbar-header">
             <a id="link-home" class="navbar-brand" href="http://www.vpr.net">
                 <div id="vpr-logo"></div></a>
-            <p id="navbar-title">VPR Template</p>
+            <p id="navbar-title">{% block header_title %}VPR Template{% endblock %}</p>
             {% if social %}
             <div id="social-logos">
                 <a href="https://plus.google.com/share?url={{ page_url|urlencode }}" target="_blank">
