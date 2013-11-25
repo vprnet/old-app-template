@@ -25,7 +25,7 @@ content_types = {
 }
 
 
-def directory_list(argv, directory='build'):
+def directory_list(argv, directory='app/build'):
     """Creates a list of all non-excluded files in current directory
     and below"""
 
@@ -63,7 +63,7 @@ def s3_filename():
                 pass
             else:
                 if f[0] is not '.':
-                    s3_list.append(f[0][6:] + '/' + i)
+                    s3_list.append(f[0][10:] + '/' + i)
                 else:
                     s3_list.append(i)
     return s3_list
@@ -100,7 +100,7 @@ def set_metadata():
             k.set_metadata('Expires', expires_header)
 
         if ext == '.css' or ext == '.js' or ext == '.html':
-            build_file = 'build/' + filename
+            build_file = 'app/build/' + filename
             f_in = open(build_file, 'rb')
             with gzip.open(build_file + '.gz', 'w+') as f:
                 f.writelines(f_in)
@@ -108,7 +108,7 @@ def set_metadata():
             f = build_file + '.gz'
             k.set_metadata('Content-Encoding', 'gzip')
         else:
-            f = filename
+            f = 'app/build/' + filename
 
         print k.key
 
