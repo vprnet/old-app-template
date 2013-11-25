@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+<!-- Customizable head elements -->
+    <title>{% block title %}Vermont Public Radio{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block description %}
+        VPR is your source for Vermont News and NPR News and home of VPR Classical, Vermont&#039;s 24-hour classical music network. Listen to VPR for VPR News, Vermont Edition, Commentaries, and Eye On The Night Sky.{% endblock %}">
+    <meta name="author" content="Matthew Parrilla, VPR, @mattparrilla">
+
+    {% if social %}
+    <meta property="og:description" content="{{ social.description }}" />
+    <meta property="fb:admins" content="5735853" />
+    <meta property="og:title" content="{{ social.title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ social.img }}" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="Vermont Public Radio" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@vprnet">
+    <meta name="twitter:title" content="{{ social.title }}">
+    <meta name="twitter:description" content="{{ social.description }}">
+    <meta name="twitter:creator" content="@mattparrilla">
+    <meta name="twitter:image:src" content="{{ social.img }}">
+    {% endif %}
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="static/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.ico') }}">
+
+    <!--Underwriter Script -->
+    <script type='text/javascript'> var googletag = googletag || {}; googletag.cmd = googletag.cmd || []; (function() { var gads = document.createElement('script'); gads.async = true; gads.type = 'text/javascript'; var useSSL = 'https:' == document.location.protocol; gads.src = (useSSL ? 'https:' : 'http:') +  '//www.googletagservices.com/tag/js/gpt.js'; var node = document.getElementsByTagName('script')[0]; node.parentNode.insertBefore(gads, node); })(); </script>
+    <script type='text/javascript'> googletag.cmd.push(function() { googletag.defineSlot( '/6634685/VPR-Sitewide-UW-1-300x250', [300, 250], 'div-gpt-ad-1365016583819-0' ).addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.enableServices(); }); </script>
+    <!-- end underwriter scripts -->
+
+    <!-- Analytics script -->
+    <script type="text/javascript">(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = '//stream.publicbroadcasting.net/analytics/aayb.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+    <!-- end analytics script -->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-fixed-top" role="navigation">
+        <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.vpr.net"><img src="static/img/vpr-logo.png" alt="VPR Logo" /></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="http://digital.vpr.net">
+                    VPR News</a></li>
+                <li class="hidden-sm"><a href="http://digital.vpr.net/programs/vermont-edition">
+                    Vermont Edition</a></li>
+                <li class="hidden-sm"><a href="http://digital.vpr.net/programs/vpr-classical">
+                    VPR Classical</a></li>
+                <li><a href="http://digital.vpr.net/topics/featured-programs"
+                    class="nav-link">Programs</a></li>
+                <li><a href="http://digital.vpr.net/support"
+                    class="nav-link">Support</a></li>
+                <li><a href="http://digital.vpr.net/inside-vpr"
+                    class="nav-link">Inside VPR</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+    <div id="body" class="container">
+    {% block content %} {% endblock %}
+
+        <footer> <p>&copy; Vermont Public Radio 2013</p> </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,84 @@
+$green: #509e2f;
+$green2: #b5bd00;
+$black: #3f4444;
+$orange: #ed8b00;
+$red: #e04e39;
+$gray: #75787b;
+$blue: #307fe2;
+$percent: 3%;
+$btn-percent: 1%;
+$tablet: 768px;
+
+body {
+    padding-top: 45px;
+    padding-bottom: 40px;
+}
+
+@media (max-width: $tablet) {
+    #body {
+        margin-left: 5px;
+    }
+}
+
+.navbar {
+    background-color: $green;
+    filter: none;
+    background-image: linear-gradient(to bottom, lighten($green, $percent), darken($green, $percent));
+    background-repeat: repeat-x;
+    border-color: #a2dc8a;
+    background-image: -moz-linear-gradient(top, lighten($green, $percent), darken($green, $percent));
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(lighten($green, $percent)), to(darken($green, $percent)));
+    background-image: -webkit-linear-gradient(top, lighten($green, $percent), darken($green, $percent));
+    background-image: -o-linear-gradient(top, lighten($green, $percent), darken($green, $percent));
+    min-height: 40px;
+    .navbar-header {
+        float: none;
+    }
+    a.navbar-brand {
+        padding: 10px 15px 5px;
+    }
+    #navbar-title {
+        color: darken(white, 5%);
+        font-size: 22px;
+        display: inline;
+        position: relative;
+        top: 4px;
+        left: 10px;
+        @media (max-width: $tablet) {
+            display: none;
+        }
+    }
+}
+
+footer {
+    margin-top: 20px;
+    float: right;
+}
+
+#underwriter-nav {
+    font-size: 12px;
+    padding-left: 0;
+    margin-top: 3px;
+    li {
+        display: inline
+    }
+}
+
+#social-logos {
+    display: inline;
+    height: 40px;
+    width: 300px;
+    a {
+        float: right;
+        margin-top: 2px;
+        padding: 5px 0 5px 10px;
+        div {
+            background-size: 100%;
+        }
+        @media (max-width: $tablet) {
+            &:first-child {
+                margin-right: 15px;
+            }
+        }
+    }
+}

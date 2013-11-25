@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>{% block title %}Vermont Public Radio{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block description %}{{ social.description }}{% endblock %}">
+    <meta name="author" content="Matthew Parrilla, VPR, @mattparrilla">
+
+    {% if social %}
+    <meta property="og:description" content="{{ social.description }}" />
+    <meta property="fb:admins" content="5735853" />
+    <meta property="og:title" content="{{ social.title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ social.img }}" />
+    <meta property="og:url" content="{{ page_url }}" />
+    <meta property="og:site_name" content="Vermont Public Radio" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@vprnet">
+    <meta name="twitter:title" content="{{ social.title }}">
+    <meta name="twitter:description" content="{{ social.description }}">
+    <meta name="twitter:creator" content="@mattparrilla">
+    <meta name="twitter:image:src" content="{{ social.img }}">
+    {% endif %}
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="static/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.ico') }}">
+
+    <!--Underwriter Script -->
+    <script type='text/javascript'> var googletag = googletag || {}; googletag.cmd = googletag.cmd || []; (function() { var gads = document.createElement('script'); gads.async = true; gads.type = 'text/javascript'; var useSSL = 'https:' == document.location.protocol; gads.src = (useSSL ? 'https:' : 'http:') +  '//www.googletagservices.com/tag/js/gpt.js'; var node = document.getElementsByTagName('script')[0]; node.parentNode.insertBefore(gads, node); })(); </script>
+    <script type='text/javascript'> googletag.cmd.push(function() { googletag.defineSlot( '/6634685/VPR-Sitewide-UW-1-300x250', [300, 250], 'div-gpt-ad-1365016583819-0' ).addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.enableServices(); }); </script>
+
+    <!-- Analytics script -->
+    <script type="text/javascript">(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = '//stream.publicbroadcasting.net/analytics/aayb.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a id="link-home" class="navbar-brand" href="http://www.vpr.net">
+                <div id="vpr-logo"></div></a>
+            <p id="navbar-title">{% block header_title %}VPR Template{% endblock %}</p>
+            {% if social %}
+            <div id="social-logos">
+                <a href="https://plus.google.com/share?url={{ page_url|urlencode }}" target="_blank">
+                    <div id="google_icon" target="_blank"></div></a>
+                <a href="http://www.twitter.com/intent/tweet?url={{ page_url|urlencode }}&text={{ social.twitter_text|urlencode }}&via=vprnet&hashtags={{ social.twitter_hashtag|urlencode }}" target="_blank">
+                    <div id="twitter_icon"></div></a>
+                <a href="https://www.facebook.com/dialog/feed?app_id=282283015178&picture={{ social.img|urlencode }}&name={{ social.title|urlencode }}&caption={{ social.subtitle|urlencode }}&description={{ social.description|urlencode }}&redirect_uri={{ page_url|urlencode }}" target="_blank">
+                    <div id="facebook_icon"></div></a>
+            </div>
+            {% endif %}
+        </div>
+</nav>
+
+<div id="body" class="container">
+    {% block content %}{% endblock %}
+
+    <footer> <p>&copy; Vermont Public Radio 2013</p> </footer>
+
+</div> <!-- /container -->
+
+    <!-- Scripts
+    ================================================== -->
+    {% block scripts %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+    {% endblock %}
+
+</body>
+</html>
