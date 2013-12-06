@@ -1,0 +1,28 @@
+$social: 30px !important;
+
+#vpr-logo {
+    padding: 0;
+    background-size: 100%;
+    width: 80px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-image: url('http://www.vpr.net/apps/app-template/static/img/vpr-logo.png');
+}
+
+#google_icon {
+    height: $social;
+    width: $social;
+    background-image: url('http://www.vpr.net/apps/app-template/static/img/webicon-googleplus.png');
+}
+
+#twitter_icon {
+    height: $social;
+    width: $social;
+    background-image: url('http://www.vpr.net/apps/app-template/static/img/webicon-twitter.png');
+}
+
+#facebook_icon {
+    height: $social;
+    width: $social;
+    background-image: url('http://www.vpr.net/apps/app-template/static/img/webicon-facebook.png');
+}
